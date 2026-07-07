@@ -1,6 +1,6 @@
 import http from "node:http";
 
-const service = "service-a";
+const service = "service-a-live-e2e-20260708";
 const port = Number(process.env.PORT ?? 3000);
 
 const server = http.createServer((req, res) => {
