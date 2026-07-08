@@ -1,15 +1,10 @@
-import { defineComponent } from "@henosis/sdk";
+import { defineComponent, h } from "@henosis/platform-mock";
 
-export default defineComponent("service-a", {
-  binding: (b) => ({
-    api: b.httpUrl(),
+export default defineComponent({
+  outputs: h.object({
+    api: h.url(),
   }),
-  build: (ctx) => {
-    const db = ctx.postgres("main", { previews: "clone" });
-    ctx.service({
-      image: ctx.image,
-      port: 8080,
-      env: { DATABASE_URL: db.url },
-    });
-  },
+  build: (_ctx, env) => ({
+    api: `https://service-a-${env.id}.henosis.example`,
+  }),
 });

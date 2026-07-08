@@ -1,3 +1,4 @@
 # service-a Henosis workspace
 
-The component workspace arrives with the SDK.
+The component workspace imports the mock Henosis platform and publishes typed
+v1 output refs.

@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@henosis/sdk':
-        specifier: github:henosis-playground/platform#path:packages/sdk
-        version: https://codeload.github.com/henosis-playground/platform/tar.gz/a910d2a1c86cc9d5302393a473c257634e47f81f#path:packages/sdk
+      '@henosis/platform-mock':
+        specifier: github:henosis-playground/platform#path:packages/platform-mock
+        version: https://codeload.github.com/henosis-playground/platform/tar.gz/4c71105d86520b998b1c167d79c63ed94472d7fa#path:packages/platform-mock
     devDependencies:
       typescript:
         specifier: ^5.9.0
@@ -18,8 +18,12 @@ importers:
 
 packages:
 
-  '@henosis/sdk@https://codeload.github.com/henosis-playground/platform/tar.gz/a910d2a1c86cc9d5302393a473c257634e47f81f#path:packages/sdk':
-    resolution: {gitHosted: true, integrity: sha512-hQqwKLNo7+60+g6PTq+zxU/IwCXBPq3LahmXX8AklXWNad/86Rmv9TWR7TgcjpMgH8mk5fbFIV4FTx3Gvk/+TA==, tarball: https://codeload.github.com/henosis-playground/platform/tar.gz/a910d2a1c86cc9d5302393a473c257634e47f81f}
+  '@henosis/core@https://codeload.github.com/henosis-playground/platform/tar.gz/4c71105d86520b998b1c167d79c63ed94472d7fa#path:packages/core':
+    resolution: {gitHosted: true, path: packages/core, tarball: https://codeload.github.com/henosis-playground/platform/tar.gz/4c71105d86520b998b1c167d79c63ed94472d7fa}
+    version: 0.0.0
+
+  '@henosis/platform-mock@https://codeload.github.com/henosis-playground/platform/tar.gz/4c71105d86520b998b1c167d79c63ed94472d7fa#path:packages/platform-mock':
+    resolution: {gitHosted: true, path: packages/platform-mock, tarball: https://codeload.github.com/henosis-playground/platform/tar.gz/4c71105d86520b998b1c167d79c63ed94472d7fa}
     version: 0.0.0
 
   typescript@5.9.3:
@@ -29,6 +33,10 @@ packages:
 
 snapshots:
 
-  '@henosis/sdk@https://codeload.github.com/henosis-playground/platform/tar.gz/a910d2a1c86cc9d5302393a473c257634e47f81f#path:packages/sdk': {}
+  '@henosis/core@https://codeload.github.com/henosis-playground/platform/tar.gz/4c71105d86520b998b1c167d79c63ed94472d7fa#path:packages/core': {}
+
+  '@henosis/platform-mock@https://codeload.github.com/henosis-playground/platform/tar.gz/4c71105d86520b998b1c167d79c63ed94472d7fa#path:packages/platform-mock':
+    dependencies:
+      '@henosis/core': https://codeload.github.com/henosis-playground/platform/tar.gz/4c71105d86520b998b1c167d79c63ed94472d7fa#path:packages/core
 
   typescript@5.9.3: {}
