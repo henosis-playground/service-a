@@ -5,6 +5,6 @@ export default defineComponent({
     api_url: h.url(),
   }),
   build: (_ctx, env) => ({
-    api_url: `https://service-a-${envName(env)}.henosis.example`,
+    api_url: `https://service-a-${envName(env)}.henosis.example/contract-break`,
   }),
 });
