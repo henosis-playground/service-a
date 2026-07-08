@@ -13,7 +13,10 @@ const server = http.createServer((req, res) => {
   }
 
   if (req.method === "GET" && url.pathname === "/") {
-    res.writeHead(200, { "content-type": "application/json; charset=utf-8" });
+    res.writeHead(200, {
+      "content-type": "application/json; charset=utf-8",
+      "x-henosis-live-check": "d19",
+    });
     res.end(`${JSON.stringify({ service })}\n`);
     return;
   }
