@@ -7,6 +7,32 @@ permissions:
   contents: read
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Exercise HTTP service
+        shell: bash
+        run: |
+          node src/server.js >server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+
+          for _ in {1..30}; do
+            if curl -fsS http://127.0.0.1:3000/healthz >/tmp/healthz.txt; then
+              break
+            fi
+            sleep 1
+          done
+
+          test "$(cat /tmp/healthz.txt)" = "ok"
+          body="$(curl -fsS http://127.0.0.1:3000/)"
+          node -e 'const body = JSON.parse(process.argv[1]); if (body.service !== "service-a") process.exit(1);' "$body"
+          sleep 35
+
   image:
     runs-on: ubuntu-latest
     steps:
