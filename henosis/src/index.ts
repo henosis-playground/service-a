@@ -4,6 +4,7 @@ export default defineComponent({
   outputs: h.object({
     api: h.url(),
     port: h.number(),
+    test: h.string(),
   }),
   build: (_ctx, env) => ({
     api: `https://service-a-${envName(env)}.henosis.example/api/v2/healthz`,
