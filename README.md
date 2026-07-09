@@ -1,5 +1,7 @@
 # service-a
 
+Lifecycle verification B service-a.
+
 Tiny dependency-free Node 22 HTTP service for the Henosis PoC.
 
 - `GET /healthz` returns `ok`
