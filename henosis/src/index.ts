@@ -9,5 +9,6 @@ export default defineComponent({
   build: (_ctx, env) => ({
     api: `https://service-a-${envName(env)}.henosis.example/api/v2/healthz`,
     port: 443,
+    test: "hi",
   }),
 });
