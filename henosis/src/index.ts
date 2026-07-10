@@ -25,10 +25,6 @@ export default defineComponent({
       servicePort: 443,
       scheme: "https",
       replicas: params.replicas,
-      resources: {
-        requests: { cpu: "100m", memory: "128Mi" },
-        limits: { cpu: "500m", memory: "512Mi" },
-      },
     });
 
     return {
