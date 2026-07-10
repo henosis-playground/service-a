@@ -10,7 +10,7 @@
     "component": "service-a"
   },
   "dependencies": {
-    "@henosis/platform-mock": "github:henosis-playground/platform#path:packages/platform-mock"
+    "@henosis/platform-k8s": "github:henosis-playground/platform#path:packages/platform-k8s"
   },
   "devDependencies": {
     "typescript": "^5.9.0"

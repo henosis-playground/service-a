@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@henosis/platform-mock':
-        specifier: github:henosis-playground/platform#path:packages/platform-mock
-        version: https://codeload.github.com/henosis-playground/platform/tar.gz/19e27c3e949b884ec6a2e29ef5ecbb99e2c1847d#path:packages/platform-mock
+      '@henosis/platform-k8s':
+        specifier: github:henosis-playground/platform#path:packages/platform-k8s
+        version: https://codeload.github.com/henosis-playground/platform/tar.gz/ee1ed2d73bfa945f5568dd3b609294a3882bceed#path:packages/platform-k8s
     devDependencies:
       typescript:
         specifier: ^5.9.0
@@ -18,12 +18,12 @@ importers:
 
 packages:
 
-  '@henosis/core@https://codeload.github.com/henosis-playground/platform/tar.gz/19e27c3e949b884ec6a2e29ef5ecbb99e2c1847d#path:packages/core':
-    resolution: {gitHosted: true, path: packages/core, tarball: https://codeload.github.com/henosis-playground/platform/tar.gz/19e27c3e949b884ec6a2e29ef5ecbb99e2c1847d}
+  '@henosis/core@https://codeload.github.com/henosis-playground/platform/tar.gz/ee1ed2d73bfa945f5568dd3b609294a3882bceed#path:packages/core':
+    resolution: {gitHosted: true, integrity: sha512-sMwwbQmEdAd1h7QfXw5ST/pwQ32d0vSRJ/akcb54H0xfK4liy9yCkmgH5367uNJqYCb2lQVNLF9luzr3Yzy7Ww==, tarball: https://codeload.github.com/henosis-playground/platform/tar.gz/ee1ed2d73bfa945f5568dd3b609294a3882bceed}
     version: 0.0.0
 
-  '@henosis/platform-mock@https://codeload.github.com/henosis-playground/platform/tar.gz/19e27c3e949b884ec6a2e29ef5ecbb99e2c1847d#path:packages/platform-mock':
-    resolution: {gitHosted: true, path: packages/platform-mock, tarball: https://codeload.github.com/henosis-playground/platform/tar.gz/19e27c3e949b884ec6a2e29ef5ecbb99e2c1847d}
+  '@henosis/platform-k8s@https://codeload.github.com/henosis-playground/platform/tar.gz/ee1ed2d73bfa945f5568dd3b609294a3882bceed#path:packages/platform-k8s':
+    resolution: {gitHosted: true, integrity: sha512-sMwwbQmEdAd1h7QfXw5ST/pwQ32d0vSRJ/akcb54H0xfK4liy9yCkmgH5367uNJqYCb2lQVNLF9luzr3Yzy7Ww==, tarball: https://codeload.github.com/henosis-playground/platform/tar.gz/ee1ed2d73bfa945f5568dd3b609294a3882bceed}
     version: 0.0.0
 
   typescript@5.9.3:
@@ -31,12 +31,20 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  yaml@2.8.1:
+    resolution: {integrity: sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
 snapshots:
 
-  '@henosis/core@https://codeload.github.com/henosis-playground/platform/tar.gz/19e27c3e949b884ec6a2e29ef5ecbb99e2c1847d#path:packages/core': {}
+  '@henosis/core@https://codeload.github.com/henosis-playground/platform/tar.gz/ee1ed2d73bfa945f5568dd3b609294a3882bceed#path:packages/core': {}
 
-  '@henosis/platform-mock@https://codeload.github.com/henosis-playground/platform/tar.gz/19e27c3e949b884ec6a2e29ef5ecbb99e2c1847d#path:packages/platform-mock':
+  '@henosis/platform-k8s@https://codeload.github.com/henosis-playground/platform/tar.gz/ee1ed2d73bfa945f5568dd3b609294a3882bceed#path:packages/platform-k8s':
     dependencies:
-      '@henosis/core': https://codeload.github.com/henosis-playground/platform/tar.gz/19e27c3e949b884ec6a2e29ef5ecbb99e2c1847d#path:packages/core
+      '@henosis/core': https://codeload.github.com/henosis-playground/platform/tar.gz/ee1ed2d73bfa945f5568dd3b609294a3882bceed#path:packages/core
+      yaml: 2.8.1
 
   typescript@5.9.3: {}
+
+  yaml@2.8.1: {}
