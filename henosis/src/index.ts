@@ -32,7 +32,7 @@ export default defineComponent({
     });
 
     return {
-      api: `${service.url}/api/v2/healthz`,
+      api: `${service.url}/api/v3/healthz`,
       port: service.port,
       test: "hi",
     };
