@@ -20,7 +20,8 @@ export default defineComponent({
     preview: { replicas: 1 },
   },
   build: (ctx, params) => {
-    const service = ctx.namespace("service-a").service("api", {
+    const namespace = ctx.namespace("service-a");
+    const service = namespace.service("api", {
       targetPort: 3000,
       servicePort: 443,
       scheme: "https",
@@ -28,6 +29,12 @@ export default defineComponent({
       resources: {
         requests: { cpu: "100m", memory: "128Mi" },
         limits: { cpu: "500m", memory: "512Mi" },
+      },
+    });
+    namespace.service("api", {
+      targetPort: 3000,
+      resources: {
+        requests: { cpu: "100m", memory: "128Mi" },
       },
     });
 
