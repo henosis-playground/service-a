@@ -10,10 +10,9 @@ export default defineComponent({
   params: {
     dev: { replicas: 1 },
     prod: {
-      // Deliberately invalid for the widened-gate acceptance pass.
       replicas: {
-        min: 5,
-        max: 3,
+        min: 2,
+        max: 5,
         targetCpu: 70,
         disruption: { minAvailable: 1 },
       },
