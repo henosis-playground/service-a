@@ -10,6 +10,7 @@ export default defineComponent({
   params: {
     dev: { replicas: 1 },
     prod: {
+      // Deliberately invalid for the widened-gate acceptance pass.
       replicas: {
         min: 5,
         max: 3,
