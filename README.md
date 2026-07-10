@@ -12,3 +12,5 @@ Run locally:
 node src/server.js
 ```
 yohohoh
+
+Live e2e marker: gated merge happy path (2026-07-10).
