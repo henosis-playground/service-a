@@ -11,8 +11,8 @@ export default defineComponent({
     dev: { replicas: 1 },
     prod: {
       replicas: {
-        min: 2,
-        max: 5,
+        min: 5,
+        max: 3,
         targetCpu: 70,
         disruption: { minAvailable: 1 },
       },
