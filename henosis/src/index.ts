@@ -1,6 +1,7 @@
 import { defineComponent, h } from "@henosis/platform-k8s";
 
 export default defineComponent({
+  // Deliberate scenario-B contract break.
   outputs: h.object({
     endpoint: h.url(),
     port: h.number(),
