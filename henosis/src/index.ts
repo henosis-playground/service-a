@@ -1,6 +1,7 @@
 import { defineComponent, h } from "@henosis/platform-k8s";
 
 export default defineComponent({
+  // Deliberately omits resources for scenario G1.
   outputs: h.object({
     api: h.url(),
     port: h.number(),
