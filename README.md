@@ -17,3 +17,4 @@ Live e2e marker: gated merge happy path (2026-07-10).
 The live runner is verified against the D23 platform image.
 
 Live flip legacy-path verification: 2026-07-12.
+Core preview push advancement verified on the same live PR.
