@@ -2,7 +2,7 @@ import { defineComponent, h } from "@henosis/platform-k8s";
 
 export default defineComponent({
   outputs: h.object({
-    api: h.url(),
+    apiUrl: h.url(),
     port: h.number(),
     test: h.string(),
   }),
@@ -32,7 +32,7 @@ export default defineComponent({
     });
 
     return {
-      api: `${service.url}/api/v3/healthz`,
+      apiUrl: `${service.url}/api/v3/healthz`,
       port: service.port,
       test: "hi",
     };
