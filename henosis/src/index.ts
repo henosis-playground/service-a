@@ -2,7 +2,7 @@ import { defineComponent, h } from "@henosis/platform-k8s";
 
 export default defineComponent({
   outputs: h.object({
-    api: h.url(),
+    api: h.url({ role: "ui" }),
     port: h.number(),
     test: h.string(),
   }),
