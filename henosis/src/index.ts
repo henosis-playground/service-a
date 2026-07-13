@@ -26,8 +26,8 @@ export default defineComponent({
       scheme: "https",
       replicas: params.replicas,
       resources: {
-        cpu: "100m",
-        memory: "128Mi",
+        requests: { cpu: "100m", memory: "128Mi" },
+        limits: { cpu: "500m", memory: "512Mi" },
       },
     });
 
