@@ -11,7 +11,7 @@ describe("service-a component", () => {
       outputs: {
         api: "https://api.service-a.svc.cluster.local/api/v3/healthz",
         port: 443,
-        test: "hi",
+        test: "shared-preview-cycle-1",
       },
       reads: ["image"],
     });

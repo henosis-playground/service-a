@@ -34,7 +34,7 @@ export default defineComponent({
     return {
       api: `https://${service.host}/api/v3/healthz`,
       port: service.port,
-      test: "hi",
+      test: "shared-preview-cycle-1",
     };
   },
 });
