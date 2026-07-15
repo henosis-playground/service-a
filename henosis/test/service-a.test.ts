@@ -13,6 +13,7 @@ describe("service-a component", () => {
         port: 443,
         test: "hi",
       },
+      reads: ["image"],
     });
     expect(result.resources.map((resource) => resource.address)).toEqual([
       "k8s/object@1/service-a-namespace",

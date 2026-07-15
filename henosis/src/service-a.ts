@@ -1,14 +1,19 @@
-import { defineComponent, output, value } from "@henosis/core";
+import { defineComponent, input, output, value } from "@henosis/core";
 import { emitObject, emitServicePair } from "@henosis/platform-k8s";
 
 export default defineComponent({
   name: "service-a",
+  inputs: {
+    image: input.config(value.string(), {
+      default: "ghcr.io/henosis-playground/service-a@sha256:f5903cb0423e3ddc53d4820c7d8e06171d11875c06cbe13b6be53726dcca3826",
+    }),
+  },
   outputs: {
     api: output.static(value.url()),
     port: output.static(value.number()),
     test: output.static(value.string()),
   },
-  build(context) {
+  build(context, inputs) {
     emitObject(context, "service-a-namespace", {
       apiVersion: "v1",
       kind: "Namespace",
@@ -16,7 +21,7 @@ export default defineComponent({
     });
     const service = emitServicePair(context, "api", {
       namespace: "service-a",
-      image: "service-a:latest",
+      image: inputs.image.value,
       targetPort: 3000,
       servicePort: 443,
       replicas: 1,
