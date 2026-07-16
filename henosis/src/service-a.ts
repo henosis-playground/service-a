@@ -9,7 +9,7 @@ export default defineComponent({
     ),
   },
   outputs: {
-    api: output.static(value.url()),
+    apiUrl: output.static(value.url()),
     port: output.static(value.number()),
   },
   build(ctx) {
@@ -30,7 +30,7 @@ export default defineComponent({
     });
 
     return {
-      api: `https://${service.host}/api/v3/healthz`,
+      apiUrl: `https://${service.host}/api/v3/healthz`,
       port: service.port,
     };
   },
