@@ -7,16 +7,14 @@
   "engines": { "node": ">=22" },
   "scripts": {
     "start": "node src/server.js",
-    "typecheck": "tsc -p tsconfig.json",
-    "test": "vitest run henosis/test/service-a.test.ts"
+    "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
     "@henosis/core": "file:../platform/packages/core",
     "@henosis/platform-k8s": "file:../platform/packages/platform-k8s"
   },
   "devDependencies": {
-    "typescript": "5.9.3",
-    "vitest": "4.1.10"
+    "typescript": "5.9.3"
   },
   "packageManager": "pnpm@11.3.0"
 }
