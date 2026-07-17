@@ -9,14 +9,17 @@ export default defineComponent({
     ),
   },
   outputs: {
-    api: output.static(value.url()),
+    endpoint: output.static(value.url()),
     port: output.static(value.number()),
   },
   build(ctx) {
     emitObject(ctx, "service-a-namespace", {
       apiVersion: "v1",
       kind: "Namespace",
-      metadata: { name: "service-a" },
+      metadata: {
+        name: "service-a",
+        labels: { "app.kubernetes.io/part-of": "henosis-demo" },
+      },
     });
     const service = emitServicePair(ctx, "api", {
       namespace: "service-a",
@@ -30,7 +33,7 @@ export default defineComponent({
     });
 
     return {
-      api: `https://${service.host}/api/v3/healthz`,
+      endpoint: `https://${service.host}/api/v3/healthz`,
       port: service.port,
     };
   },
